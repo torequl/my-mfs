@@ -53,11 +53,11 @@
 
         <!-- Button -->
         <section class="m-4 grid grid-cols-2 gap-4">
-            <button class="btn btn-active btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i>Add
+            <button id="add-money-button" class="btn btn-active btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i>Add
                 Money</button>
-            <button class="btn btn-active btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i>Cash
+            <button id="cash-out-button" class="btn btn-active btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i>Cash
                 Out</button>
-            <button class="btn btn-active col-span-2 text-lg"><i
+            <button id="transaction-btn" class="btn btn-active col-span-2 text-lg"><i
                     class="fa-solid fa-money-check-dollar"></i>Transaction</button>
         </section>
 
@@ -88,7 +88,7 @@
             </div>
 
             <!-- Cash Out Form Start -->
-            <div id="add-money-form" class="card w-full shrink-0 border">
+            <div id="cash-out-form" class="hidden card w-full shrink-0 border">
                 <form class="card-body">
                     <div class="form-control">
                         <label class="label">
@@ -117,6 +117,7 @@
 
     </footer>
 
+    <script src="./js/feature.js"></script>
     <script src="./js/home.js"></script>
 </body>
 
