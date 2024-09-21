@@ -7,54 +7,117 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/2e4fffeab5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header class="max-w-lg mx-auto">
-
+    <header class="w-screen max-w-md mx-auto">
         <section class="flex items-center justify-between p-4">
             <div class="flex items-center gap-2">
                 <img src="./icon/user-icon.png" alt="">
-                <h3 class="text-xl">Torequl Islam</h3>
+                <h3 class="text-lg">Torequl Islam</h3>
             </div>
             <div>
-                <button class="btn btn-active btn-neutral">Neutral</button>
+                <button class="btn btn-active btn-neutral">Logout<i class="fa-solid fa-right-from-bracket"></i></button>
             </div>
         </section>
 
         <hr>
 
-        <section class="rounded-lg bg-slate-950 flex flex-col p-5">
+        <section class="rounded-xl bg-slate-950 flex flex-col p-5 mx-4">
             <!-- Mastercard Top -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <img class="w-16" src="./icon/mastercard.png" alt="">
-                    <h3 class="text-xl text-slate-200">Mastercard</h3>
+                    <img class="w-10" src="./icon/mastercard.png" alt="">
+                    <h3 class="text-lg text-slate-200">Mastercard</h3>
                 </div>
                 <div>
-                    <h3 class="text-xl text-slate-200">TOREQUL ISLAM</h3>
+                    <h3 class="text-lg text-slate-200">TOREQUL ISLAM</h3>
                 </div>
             </div>
             <!-- Mastercard Mid -->
             <div class="flex flex-col text-center py-6">
-                <h3 class="text-xl text-white">Current Balance</h3>
-                <h2 class="font-bold text-6xl text-white">$<span>3250</span></h2>
+                <h3 class="text-lg text-white">Current Balance</h3>
+                <h2 class="font-bold text-5xl text-white">$<span id="balance">3250</span></h2>
             </div>
             <!-- Mastercard Bottom -->
             <div class="flex justify-between mt-4">
-                <p class="text-xl text-slate-200">4545 654 321 987</p>
-                <p class="text-xl text-slate-200">12/29</p>
+                <p class="text-lg text-slate-200">4545 654 321 987</p>
+                <p class="text-lg text-slate-200">12/29</p>
             </div>
         </section>
     </header>
 
-    <main>
+    <main class="w-screen max-w-md mx-auto">
+
+
+        <!-- Button -->
+        <section class="m-4 grid grid-cols-2 gap-4">
+            <button class="btn btn-active btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i>Add
+                Money</button>
+            <button class="btn btn-active btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i>Cash
+                Out</button>
+            <button class="btn btn-active col-span-2 text-lg"><i
+                    class="fa-solid fa-money-check-dollar"></i>Transaction</button>
+        </section>
+
+        <div class="divider"></div>
+        <!-- Input From  -->
+        <section class="m-4">
+            <!-- Ad Mony Form Start -->
+            <div id="add-money-form" class="hidden card w-full shrink-0 border">
+                <form class="card-body">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-bold">Amount</span>
+                        </label>
+                        <input type="number" id="add-money-input" placeholder="Amount" class="input input-bordered"
+                            required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-bold">PIN</span>
+                        </label>
+                        <input type="password" id="pin-number-input" placeholder="PIN" class="input input-bordered"
+                            autocomplete="off" required />
+                    </div>
+                    <div class="form-control mt-6">
+                        <button id="add-money-btn" class="btn btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i> Add Money</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Cash Out Form Start -->
+            <div id="add-money-form" class="card w-full shrink-0 border">
+                <form class="card-body">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-bold">Amount</span>
+                        </label>
+                        <input type="number" id="cash-out-input" placeholder="Amount" class="input input-bordered"
+                            required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-bold">PIN</span>
+                        </label>
+                        <input type="password" id="cash-out-pin" placeholder="PIN" class="input input-bordered"
+                            autocomplete="off" required />
+                    </div>
+                    <div class="form-control mt-6">
+                        <button id="cash-out-btn" class="btn btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i> Cash Out</button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
     </main>
 
     <footer>
 
     </footer>
+
+    <script src="./js/home.js"></script>
 </body>
 
 </html>
