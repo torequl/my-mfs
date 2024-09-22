@@ -19,12 +19,24 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
     
     const inputAmount = getInputValue('add-money-input');
     const inputPin = getInputValue('pin-number-input');
+
+    if (isNaN(inputAmount)){
+        alert("Failed To Add Money")
+        return;
+    }
     
 
     if (inputPin === 1234){
         const balance = getTextValue('balance');
         const newBalance = balance + inputAmount;
         document.getElementById('balance').innerText = newBalance;
+
+        // Create div for transaction history
+        const p = document.createElement('p');
+        p.innerText = `Added: ${inputAmount} Tk. New Balance: ${newBalance} Tk.`
+        p.classList.add("p-3", "text-lg", "bg-blue-200");
+        document.getElementById('history-container').appendChild(p);
+        
     }
     else {
         alert('Wrong PIN, Try Again.')
@@ -38,10 +50,26 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
     const inputAmount = getInputValue('cash-out-input');
     const inputPin = getInputValue('cash-out-pin');
 
+    if (isNaN(inputAmount)){
+        alert("Failed To Add Money")
+        return;
+    }
+
     if (inputPin === 1234){
         const balance = getTextValue('balance');
+
+        if (inputAmount > balance){
+            alert("You Do Not Have Money")
+            return;
+        }
+
         const newBalance = balance -inputAmount;
         document.getElementById('balance').innerText = newBalance;
+
+        const p = document.createElement('p');
+        p.innerText = `Cash Out: ${inputAmount} | New Balance: ${newBalance}`
+        p.classList.add("p-3", "text-lg", "bg-red-200")
+        document.getElementById('history-container').appendChild(p);
     }
     else {
         alert('Wrong PIN, Try Again.')
