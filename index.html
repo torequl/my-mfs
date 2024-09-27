@@ -1,133 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/2e4fffeab5.js" crossorigin="anonymous"></script>
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
-    <header class="w-screen max-w-md mx-auto">
-        <section class="flex items-center justify-between p-4">
-            <div class="flex items-center gap-2">
-                <img src="./icon/user-icon.png" alt="">
-                <h3 class="text-lg">Torequl Islam</h3>
-            </div>
-            <div>
-                <button class="btn btn-active btn-neutral">Logout<i class="fa-solid fa-right-from-bracket"></i></button>
-            </div>
-        </section>
 
-        <hr>
+    <section class="w-screen h-screen max-w-sm mx-auto gap-8 p-4 flex flex-col justify-center">
 
-        <section class="rounded-xl bg-slate-950 flex flex-col p-5 mx-4">
-            <!-- Mastercard Top -->
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <img class="w-8" src="./icon/mastercard.png" alt="">
-                    <h3 class="text-sm text-slate-200">Mastercard</h3>
-                </div>
-                <div>
-                    <h3 class="text-sm text-slate-200">TOREQUL ISLAM</h3>
-                </div>
-            </div>
-            <!-- Mastercard Mid -->
-            <div class="flex flex-col text-center py-6">
-                <h3 class="text-lg text-white">Current Balance</h3>
-                <h2 class="font-bold text-4xl text-white">$<span id="balance">3250</span></h2>
-            </div>
-            <!-- Mastercard Bottom -->
-            <div class="flex justify-between mt-4">
-                <p class="text-sm text-slate-200">4545 654 321 987</p>
-                <p class="text-sm text-slate-200">12/29</p>
-            </div>
-        </section>
-    </header>
+        <h2 class="text-center font-bold text-3xl">Login</h2>
 
-    <main class="w-screen max-w-md mx-auto">
+        <!-- <div> -->
+        <form class="gap-8 flex flex-col">
 
-
-        <!-- Button -->
-        <section class="m-4 grid grid-cols-2 gap-4">
-            <button id="add-money-button" class="btn btn-active btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i>Add
-                Money</button>
-            <button id="cash-out-button" class="btn btn-active btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i>Cash
-                Out</button>
-            <button id="transaction-btn" class="btn btn-active col-span-2 text-lg"><i
-                    class="fa-solid fa-money-check-dollar"></i>Transaction</button>
-        </section>
-
-        <div class="divider"></div>
-        <!-- Input From  -->
-        <section class="m-4">
-            <!-- Ad Mony Form Start -->
-            <div id="add-money-form" class="hidden card w-full shrink-0 border">
-                <form class="card-body">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-bold">Amount</span>
-                        </label>
-                        <input type="number" id="add-money-input" placeholder="Amount" class="input input-bordered"
-                            required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-bold">PIN</span>
-                        </label>
-                        <input type="password" id="pin-number-input" placeholder="PIN" class="input input-bordered"
-                            autocomplete="off" required />
-                    </div>
-                    <div class="form-control mt-6">
-                        <button id="add-money-btn" class="btn btn-primary text-lg"><i class="fa-regular fa-money-bill-1"></i> Add Money</button>
-                    </div>
-                </form>
+            <!-- Input - 1 -->
+            <div class="relative">
+                <input type="text" id="input-user"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " />
+                <label for="input-user"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">User
+                    Name</label>
             </div>
 
-            <!-- Cash Out Form Start -->
-            <div id="cash-out-form" class="hidden card w-full shrink-0 border">
-                <form class="card-body">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-bold">Amount</span>
-                        </label>
-                        <input type="number" id="cash-out-input" placeholder="Amount" class="input input-bordered"
-                            required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-bold">PIN</span>
-                        </label>
-                        <input type="password" id="cash-out-pin" placeholder="PIN" class="input input-bordered"
-                            autocomplete="off" required />
-                    </div>
-                    <div class="form-control mt-6">
-                        <button id="cash-out-btn" class="btn btn-secondary text-lg"><i class="fa-solid fa-right-from-bracket"></i> Cash Out</button>
-                    </div>
-                </form>
+            <!-- Input - 2 -->
+            <div class="relative">
+                <input type="password" id="input-pin"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " />
+                <label for="input-pin"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">PIN</label>
             </div>
 
-            <!-- Transaction -->
-             <div id="transaction-history">
-                <h2 class="text-2xl text-center mb-5">Transaction History</h2>
+            <button id="button" type="button"
+                class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</button>
 
-                <div id="history-container" class="space-y-4">
-                    
-                </div>
-             </div>
-        </section>
+        </form>
 
-    </main>
+        <p>Don't Have Account <a class="text-blue-500" href="#">Create Account</a></p>
 
-    <footer>
+        <!-- </div> -->
 
-    </footer>
+    </section>
 
-    <script src="./js/feature.js"></script>
-    <script src="./js/home.js"></script>
+
+    <script>
+
+        function inputValue(id) {
+            const inputValue = document.getElementById(id).value;
+            const inputValueNumber = parseFloat(inputValue);
+            return inputValueNumber;
+        }
+
+        document.getElementById('button').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const user = document.getElementById('input-user').value;
+            const userInput = user.toLowerCase();
+
+            // const userInput = inputValue('input-user');
+            const pinInput = inputValue('input-pin');
+
+            if (userInput === "torequl" && pinInput === 1234){
+                window.location.href ="./home.html";
+            }
+            else {
+                alert("Wrong user And PIN");
+            }
+
+            // console.log(userInput, pinInput)
+        })
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
